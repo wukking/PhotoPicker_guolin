@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wuyson.takephotodemo">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <!--如果项目中创建文件夹使用的是getExternalFilesDir()-->
+    <!--在4.3及以下才需要请求 WRITE_EXTERNAL_STORAGE permission-->
+    <!--从4.4开始, 不再需要去请求 -->
+    <!--所以你可以添加 maxSdkVersion 这个属性-->
+    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"-->
+        <!--android:maxSdkVersion="18" />-->
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        
+        <provider
+            android:authorities="com.wuyson.takephotodemo.fileprovider"
+            android:name="android.support.v4.content.FileProvider"
+            android:grantUriPermissions="true"
+            android:exported="false">
+
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path"/>
+        </provider>
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".GoogleActivity"/>
+
+    </application>
+
+</manifest>

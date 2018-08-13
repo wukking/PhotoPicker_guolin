@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Google官方版-->
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <root-path
+        name="root"
+        path="" />
+    <!--必须填写路径-->
+    <external-path
+        name="my_images"
+        path="Android/data/com.wuyson.takephotodemo/files/Pictures" />
+</paths>

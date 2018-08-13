@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="16dp"
+    tools:context="com.wuyson.takephotodemo.MainActivity">
+
+    <ImageView
+        android:id="@+id/img_content"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:scaleType="centerInside"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/btn_camera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_content"
+        android:onClick="openCamera"
+        android:text="拍照"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/btn_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_camera"
+        android:onClick="showGallery"
+        android:text="打开相册" />
+
+    <Button
+        android:id="@+id/btn_google"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_gallery"
+        android:onClick="openGoogle"
+        android:text="Google官方打开相机" />
+</RelativeLayout>
